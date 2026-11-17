@@ -1,0 +1,15 @@
+# Builds the project on every push: installs Lean, downloads Mathlib's compiled files, runs
+# `lake build` (which also runs the audit in Composition/Audit.lean).
+name: Build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1

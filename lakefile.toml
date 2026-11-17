@@ -1,0 +1,14 @@
+name = "qpm-focus-composition"
+version = "0.1.0"
+defaultTargets = ["Composition"]
+
+# The definitions and results (readable files, auxiliary `Lemmas/`, `Audit`).
+[[lean_lib]]
+name = "Composition"
+# Mathlib's standard linters, without the copyright header that Mathlib's own files need.
+leanOptions = { weak.linter.mathlibStandardSet = true, weak.linter.style.header = false }
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.35.0"
